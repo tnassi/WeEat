@@ -1,0 +1,35 @@
+<%= form_with(model: @restaurant, local: true) do |form| %>
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+
+      <ul>
+      <% restaurant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+
+
+    <%= form.label "name" %>
+    <%= form.text_field "name" %><br />
+    <%= form.label "cuisine" %>
+    <%= form.radio_button "cuisine", "italian", :checked => true %> Italian
+    <%= form.radio_button "cuisine", "asian" %> Asian
+    <%= form.radio_button "cuisine", "israeli"%> Israeli <br />
+    <%= form.label "rating" %> (0-3)
+    <%= form.text_field "rating" %><br />
+    <%= form.label "Accepts 10Bis" %>
+    <%= form.check_box "accepts_ten_bis" %><br />
+    <%= form.label "address" %>
+    <%= form.text_field "address" %><br />
+    <%= form.label "maximum_delivery_time" %> (hrs)
+    <%= form.text_field "maximum_delivery_time" %><br />
+
+
+    <%= form.submit %>
+  </div>
+<% end %>
