@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<table class="listing" summary="Restaurants">
+  <tr>
+
+    <th> Name </th>
+    <td>
+        <%=@restaurant.name %>
+    </td>
+  <tr />
+  <tr>
+    <th> Cuisine </th>
+    <td>
+        <%=@restaurant.cuisine %>
+    </td>
+  <tr />
+  <tr>
+    <th> Rating </th>
+      <td>
+        <%=@restaurant.rating %>
+      </td>
+   <tr />
+   <tr>
+    <th> Accepts 10Bis </th>
+      <td>
+        <%=@restaurant.accepts_ten_bis %>
+      </td>
+   <tr />
+   <tr>
+    <th> Address </th>
+      <td>
+        <%=@restaurant.address %>
+      </td>
+   <tr />
+   <tr>
+    <th> Maximum Delivery Time (hrs) </th>
+      <td>
+        <%=@restaurant.maximum_delivery_time %>
+      </td>
+  </tr>
+</table>
+
+<br />
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>
